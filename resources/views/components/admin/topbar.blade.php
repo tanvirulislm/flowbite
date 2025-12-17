@@ -12,10 +12,11 @@
                             d="M5 7h14M5 12h14M5 17h10" />
                     </svg>
                 </button>
-                <a href="https://flowbite.com" class="flex ms-2 md:me-24">
+                <a href="#" class="flex ms-2 md:me-24">
                     <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 me-3" alt="FlowBite Logo" />
-                    <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+                    <span class="self-center text-lg font-semibold whitespace-nowrap dark:text-white">AppleShop</span>
                 </a>
+
             </div>
             <div class="flex items-center">
                 <div class="flex items-center ms-3">
@@ -24,7 +25,7 @@
                             class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                             aria-expanded="false" data-dropdown-toggle="dropdown-user">
                             <span class="sr-only">Open user menu</span>
-                            <img class="w-8 h-8 rounded-full"
+                            <img class="w-8 h-8 rounded-base"
                                 src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                         </button>
                     </div>
