@@ -4,7 +4,7 @@
     'items' => []
 ])
 
-<nav class="flex p-3 bg-neutral-secondary-medium border border-default-medium rounded-base"
+<nav class="flex p-3 bg-neutral-primary-soft border border-default-medium rounded-base"
      aria-label="Breadcrumb">
 
     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">

@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
-    <div class="p-5 bg-white border border-gray-200 rounded-xl">
+    <div class="p-5 bg-neutral-primary-soft border border-gray-200 rounded-xl">
         <div class="flex items-center justify-between">
             <span class="text-medium font-medium text-gray-500">Total Revenue</span>
             <span class="text-xs font-semibold text-green-600 bg-green-100 px-2 py-0.5 rounded-full">
@@ -22,7 +22,7 @@
     </div>
 
 
-    <div class="p-5 bg-white border border-gray-200 rounded-xl ">
+    <div class="p-5 bg-neutral-primary-soft border border-gray-200 rounded-xl ">
         <div class="flex items-center justify-between">
             <span class="text-medium font-medium text-gray-500">Orders</span>
             <span class="text-xs font-semibold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">
@@ -44,7 +44,7 @@
 
 
 
-    <div class="p-5 bg-white border border-gray-200 rounded-xl">
+    <div class="p-5 bg-neutral-primary-soft border border-gray-200 rounded-xl">
         <div class="flex items-center justify-between">
             <span class="text-medium font-medium text-gray-500">Customers</span>
             <span class="text-xs font-semibold text-purple-600 bg-purple-100 px-2 py-0.5 rounded-full">
@@ -67,7 +67,7 @@
 
 
 
-    <div class="p-5 bg-white border border-gray-200 rounded-xl">
+    <div class="p-5 bg-neutral-primary-soft border border-gray-200 rounded-xl">
         <div class="flex items-center justify-between">
             <span class="text-medium font-medium text-gray-500">Products Sold</span>
             <span class="text-xs font-semibold text-orange-600 bg-orange-100 px-2 py-0.5 rounded-full">

@@ -7,7 +7,7 @@
     {{-- Recent Orders --}}
     <div class="grid grid-cols-1 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-6 mt-6">
         <!-- Recent Orders -->
-        <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+        <div class="bg-neutral-primary-soft border border-gray-200 rounded-xl shadow-sm p-6">
 
             <!-- Header -->
             <div class="mb-6">
@@ -178,7 +178,7 @@
 
 
         <!-- Recent Customers -->
-        <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-6">
+        <div class="bg-neutral-primary-soft border border-gray-200 rounded-xl shadow-sm p-6">
 
             <!-- Header -->
             <div class="mb-6">
@@ -297,6 +297,7 @@
 
 
     </div>
+
 
 
 
