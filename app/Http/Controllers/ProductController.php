@@ -27,7 +27,7 @@ class ProductController extends Controller
         ])->get();
 
         // Get all variations with their options (for filtering/display)
-        $variations = Variation::with('options')->get();
+        $variations = Variation::with('attributes')->get();
 
         // Optional: Get all used variation options
         $usedAttributes = Attribute::whereHas('productVariants')->with('variation')->get();

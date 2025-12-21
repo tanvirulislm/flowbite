@@ -30,7 +30,7 @@
         <div class="flex items-end justify-end p-4 gap-4">
             <!-- Create Button -->
             <a href="#" data-modal-target="create-modal" data-modal-toggle="create-modal"
-                class="px-4 py-2 bg-brand text-white rounded-base">
+                class="px-4 py-2 text-sm bg-brand text-white rounded">
                 Create Category
             </a>
         </div>
@@ -110,16 +110,16 @@
                     <div>
                         <label class="block mb-1 text-sm font-medium">Category Name</label>
                         <input type="text" name="name" id="create-name"
-                            class="w-full px-3 py-2 bg-neutral-secondary-medium
-                                                                                                                          border border-default-medium rounded-base">
+                            class="w-full px-3 py-2 text-sm bg-neutral-secondary-medium
+                                                                                                                                                                      border border-default-medium rounded">
                     </div>
 
                     <!-- Parent -->
                     <div>
                         <label class="block mb-1 text-sm font-medium">Parent Category</label>
                         <select name="parent_id" id="create-parent"
-                            class="w-full px-3 py-2 bg-neutral-secondary-medium
-                                                                                                                           border border-default-medium rounded-base">
+                            class="w-full px-3 py-2 text-sm bg-neutral-secondary-medium
+                                                                                                                                                                       border border-default-medium rounded">
                             <option value="">None</option>
                             @foreach($categories as $cat)
                                 <option value="{{ $cat->id }}">{{ $cat->name }}</option>
@@ -131,18 +131,18 @@
                     <div>
                         <label class="block mb-1 text-sm font-medium">Category Image</label>
                         <input type="file" name="image"
-                            class="w-full px-3 py-2 bg-neutral-secondary-medium
-                                                                                                                          border border-default-medium rounded-base">
+                            class="w-full px-3 py-1 text-sm bg-neutral-secondary-medium
+                                                                                                                                                                      border border-default-medium rounded">
                     </div>
 
                 </div>
 
                 <div class="flex justify-end gap-3 mt-6">
-                    <button type="button" data-modal-hide="create-modal" class="px-4 py-2 border rounded-base">
+                    <button type="button" data-modal-hide="create-modal" class="px-4 py-2 text-sm border rounded">
                         Cancel
                     </button>
 
-                    <button type="submit" class="px-4 py-2 bg-brand text-white rounded-base">
+                    <button type="submit" class="px-4 py-2 text-sm bg-brand text-white rounded">
                         Create
                     </button>
                 </div>
@@ -167,11 +167,11 @@
                 @method('DELETE')
 
                 <div class="flex justify-end gap-3">
-                    <button type="button" data-modal-hide="delete-modal" class="px-4 py-2 text-sm border rounded-base">
+                    <button type="button" data-modal-hide="delete-modal" class="px-4 py-2 text-sm border rounded">
                         Cancel
                     </button>
 
-                    <button type="submit" class="px-4 py-2 text-sm bg-danger text-white rounded-base">
+                    <button type="submit" class="px-4 py-2 text-sm bg-danger text-white rounded">
                         Delete
                     </button>
                 </div>
@@ -197,16 +197,16 @@
                     <div>
                         <label class="block mb-1 text-sm font-medium">Category Name</label>
                         <input type="text" name="name" id="edit-name"
-                            class="w-full px-3 py-2 bg-neutral-secondary-medium
-                                                                                                                          border border-default-medium rounded-base">
+                            class="w-full px-3 py-2 text-sm bg-neutral-secondary-medium
+                                                                                                                                                                      border border-default-medium rounded">
                     </div>
 
                     <!-- Parent -->
                     <div>
                         <label class="block mb-1 text-sm font-medium">Parent Category</label>
                         <select name="parent_id" id="edit-parent"
-                            class="w-full px-3 py-2 bg-neutral-secondary-medium
-                                                                                                                           border border-default-medium rounded-base">
+                            class="w-full px-3 py-2 text-sm bg-neutral-secondary-medium
+                                                                                                                                                                       border border-default-medium rounded">
                             <option value="">None</option>
                             @foreach($categories as $cat)
                                 <option value="{{ $cat->id }}">{{ $cat->name }}</option>
@@ -218,18 +218,18 @@
                     <div>
                         <label class="block mb-1 text-sm font-medium">Change Image</label>
                         <input type="file" name="image"
-                            class="w-full px-3 py-2 bg-neutral-secondary-medium
-                                                                                                                          border border-default-medium rounded-base">
+                            class="w-full px-3 py-2 text-sm bg-neutral-secondary-medium
+                                                                                                                                                                      border border-default-medium rounded">
                     </div>
 
                 </div>
 
                 <div class="flex justify-end gap-3 mt-6">
-                    <button type="button" data-modal-hide="edit-modal" class="px-4 py-2 border rounded-base">
+                    <button type="button" data-modal-hide="edit-modal" class="px-4 py-2 text-sm border rounded">
                         Cancel
                     </button>
 
-                    <button type="submit" class="px-4 py-2 bg-brand text-white rounded-base">
+                    <button type="submit" class="px-4 py-2 text-sm bg-brand text-white rounded">
                         Update
                     </button>
                 </div>
@@ -239,8 +239,8 @@
 
 
     <!-- =====================
-                           EDIT & DELETE BUTTON
-                        ====================== -->
+                                                                       EDIT & DELETE BUTTON
+                                                                    ====================== -->
 
     <script>
         document.addEventListener('click', function (e) {
