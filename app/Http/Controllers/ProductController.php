@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Inertia\Inertia;
 use App\Models\Brand;
 use App\Models\Product;
 use App\Models\Category;
@@ -45,8 +44,8 @@ class ProductController extends Controller
             'long_des' => 'nullable|string',
             'category_id' => 'required|exists:categories,id',
             'brand_id' => 'nullable|exists:brands,id',
-            'remark' => 'nullable|string|max:255',
-            'status' => 'nullable|boolean',
+            'remark' => 'nullable|in:Popular,New,Top,Special,Trending,Regular',
+            'status' => 'nullable|in:active,draft,archived',
             'cover_image' => 'nullable|image|max:2048',
 
             // Variants validation
@@ -57,7 +56,7 @@ class ProductController extends Controller
             'variants.*.stock' => 'required|integer|min:0',
             'variants.*.image' => 'nullable|image|max:2048',
 
-            // Now each variant can have MULTIPLE variations
+            // Multiple variations per variant
             'variants.*.variations' => 'nullable|array',
             'variants.*.variations.*.variation_id' => 'required_with:variants.*.variations|exists:variations,id',
             'variants.*.variations.*.option_id' => 'required_with:variants.*.variations.*.variation_id|exists:variation_options,id',
@@ -82,17 +81,17 @@ class ProductController extends Controller
                 'long_des' => $request->long_des,
                 'category_id' => $request->category_id,
                 'brand_id' => $request->brand_id,
-                'remark' => $request->remark,
-                'status' => $request->status ?? 1,
+                'remark' => $request->remark ?? 'Regular',
+                'status' => $request->status ?? 'active', // Fixed: Use string instead of integer
                 'cover_image' => $coverImagePath,
             ]);
 
             // Loop through variants
             foreach ($request->variants as $index => $variantData) {
-                // Upload variant image
+                // Upload variant image - Fixed: Use proper file handling
                 $variantImagePath = null;
-                if (isset($variantData['image']) && $variantData['image'] instanceof \Illuminate\Http\UploadedFile) {
-                    $image = $variantData['image'];
+                if ($request->hasFile("variants.{$index}.image")) {
+                    $image = $request->file("variants.{$index}.image");
                     $imageName = time() . '_variant_' . $index . '.' . $image->getClientOriginalExtension();
                     $image->move(public_path('uploads/products'), $imageName);
                     $variantImagePath = 'uploads/products/' . $imageName;
@@ -125,9 +124,18 @@ class ProductController extends Controller
             DB::commit();
 
             return redirect()->back()->with('success', 'Product created successfully.');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            DB::rollBack();
+            Log::error('Product Creation Validation Error:', $e->errors());
+            return redirect()->back()
+                ->withErrors($e->errors())
+                ->withInput();
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('error', 'Failed to create product: ' . $e->getMessage())->withInput();
+            Log::error('Product Creation Error: ' . $e->getMessage());
+            return redirect()->back()
+                ->with('error', 'Failed to create product: ' . $e->getMessage())
+                ->withInput();
         }
     }
 

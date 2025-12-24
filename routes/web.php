@@ -38,7 +38,8 @@ Route::delete('/delete-party/{id}', [PartyController::class, 'DeleteParty'])->na
 // Product URL
 Route::get('/product', [ProductController::class, 'ProductPage'])->name('product');
 Route::get('/create-product', [ProductController::class, 'CreateProductPage'])->name('create-product');
-Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('product.destroy');
+Route::post('/create-product', [ProductController::class, 'CreateProduct'])->name('create-product-post');
+Route::delete('/product/{product}', [ProductController::class, 'destroy'])->name('delete-product');
 
 // Product Variation
 Route::get('/variation', [VariationController::class, 'VariationPage'])->name('variation');
